@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sensive Blog - Home</title>
+    <title>Remake Barber - Blog Details</title>
     <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
 
     <link rel="stylesheet" href="{% static 'styles.min.css' %}">
@@ -26,7 +26,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav justify-content-center">
-                <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right navbar-social">
@@ -42,152 +42,136 @@
     </header>
     <!--================Header Menu Area =================-->
     
-    <main class="site-main">
-      <!--================Hero Banner start =================-->  
-      <section class="mb-30px">
-        <div class="container">
-          <div class="hero-banner">
-            <div class="hero-banner__content">
-              <h1>Blog details</h1>
-              <h4>Home - Blog Details</h4>
-            </div>
+    <!--================ Hero sm Banner start =================-->      
+    <section class="mb-30px">
+      <div class="container">
+        <div class="hero-banner hero-banner--sm">
+          <div class="hero-banner__content">
+            <h1>Blog details</h1>
+            <nav aria-label="breadcrumb" class="banner-breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
+              </ol>
+            </nav>
           </div>
         </div>
-      </section>
-      <!--================Hero Banner end =================-->  
+      </div>
+    </section>
+    <!--================ Hero sm Banner end =================-->    
+    
 
-      <!--================ Blog slider start =================-->
-      <section>
-        <div class="container">
-          <div class="d-flex">
-            {% for post in most_popular_posts %}
-            <div class="flex-fill" style="margin-right: 30px;">
-              <div class="card blog__slide text-center">
-                <div class="blog__slide__img">
-                  <img class="card-img rounded-0" src="{% if post.image_url %}{{post.image_url}}{% else %}{% static 'img/banner/blog.png' %}{% endif %}"alt="">
-                </div>
-                <div class="blog__slide__content">
-                  <h3><a href="#">{{post.title}}</a></h3>
-                  <p>{{post.published_at}}</p>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-      </section>
-      <!--================ Blog slider end =================-->
-
-      <!--================ Start Blog Post Area =================-->
-      <section class="blog-post-area section-margin mt-4">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8">
-              {% for post in fresh_posts %}
-              <div class="single-recent-blog-post">
-                <div class="thumb">
-                  <img class="img-fluid" src="{% if post.image_url %}{{post.image_url}}{% else %}{% static 'img/banner/blog.png' %}{% endif %}"alt="">
-                  <ul class="thumb-info" style="max-width: 550px;">
-                    <li><a href="#"><i class="ti-user"></i>{{post.author}}</a></li>
-                    <li><a href="#"><i class="ti-notepad"></i>{{post.published_at}}</a></li>
-                    <li><a href="#"><i class="ti-themify-favicon"></i>{{post.comments_amount}}</a></li>
-                  </ul>
-                </div>
-                <div class="details mt-20">
-                  <h3>{{post.title}}</h3>
-                  <p>{{post.text|truncatechars:200}}</p>
-                  <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
-                </div>
-              </div>
-            {% endfor %}
-            </div>
-
-
-              <div class="single-recent-blog-post">
-                <div class="thumb">
-                  <img class="img-fluid" src="{% static 'img/blog/blog3.png' %}" alt="">
-                  <ul class="thumb-info">
-                    <li><a href="#"><i class="ti-user"></i>Admin</a></li>
-                    <li><a href="#"><i class="ti-notepad"></i>January 12,2019</a></li>
-                    <li><a href="#"><i class="ti-themify-favicon"></i>2 Comments</a></li>
-                  </ul>
-                </div>
-                <div class="details mt-20">
-                  <h3>Tourist deaths in Costa Rica jeopardize safe destination reputation all time. </h3>
-                  <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
-                  <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
-                </div>
-              </div>
-
-              <div class="single-recent-blog-post">
-                <div class="thumb">
-                  <img class="img-fluid" src="{% static 'img/blog/blog4.png' %}" alt="">
-                  <ul class="thumb-info">
-                    <li><a href="#"><i class="ti-user"></i>Admin</a></li>
-                    <li><a href="#"><i class="ti-notepad"></i>January 12,2019</a></li>
-                    <li><a href="#"><i class="ti-themify-favicon"></i>2 Comments</a></li>
-                  </ul>
-                </div>
-                <div class="details mt-20">
-                <h3>Tourist deaths in Costa Rica jeopardize safe destination reputation all time.  </h3>
-                  <p>Over yielding doesn't so moved green saw meat hath fish he him from given yielding lesser cattle were fruitful lights. Given let have, lesser their made him above gathered dominion sixth. Creeping deep said can't called second. Air created seed heaven sixth created living</p>
-                  <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
-                </div>
-              </div>
-              
-
-              <div class="row">
-                <div class="col-lg-12">
-                  <nav class="blog-pagination justify-content-center d-flex">
-                    <ul class="pagination">
-                      <li class="page-item">
-                        <a href="#" class="page-link" aria-label="Previous">
-                          <span aria-hidden="true">
-                            <i class="ti-angle-left"></i>
-                          </span>
-                        </a>
-                      </li>
-                      <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                      <li class="page-item"><a href="#" class="page-link">2</a></li>
-                      <li class="page-item">
-                        <a href="#" class="page-link" aria-label="Next">
-                          <span aria-hidden="true">
-                            <i class="ti-angle-right"></i>
-                          </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-
-            <!-- Start Blog Post Siddebar -->
-            <div class="col-lg-4 sidebar-widgets">
-              <div class="widget-wrap">
-                <div class="single-sidebar-widget newsletter-widget">
-                  <h4 class="single-sidebar-widget__title">Newsletter</h4>
-                  <div class="form-group mt-30">
-                    <div class="col-autos">
-                      <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''"
-                        onblur="this.placeholder = 'Enter email'">
+    <!--================ Start Blog Post Area =================-->
+    <section class="blog-post-area section-margin">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="main_blog_details">
+              <img class="img-fluid" src="img/blog/blog4.png" alt="">
+              <h4>{{post.title}}</h4>
+              <div class="user_details">
+                <div class="mt-sm-0 mt-3">
+                  <div class="media">
+                    <div class="media-body">
+                      <h5>{{post.author}}</h5>
+                      <p>{{post.published_at}}</p>
                     </div>
                   </div>
-                  <button class="bbtns d-block mt-20 w-100">Subcribe</button>
                 </div>
-
-
-                <div class="single-sidebar-widget post-category-widget">
-                  <h4 class="single-sidebar-widget" style="height:200px;">Здесь будет реклама</h4>
+              </div>
+              <p>{{post.text}}</p>
+              <div class="news_d_footer flex-column flex-sm-row">
+                <a href="#"><span class="align-middle mr-2"><i class="ti-heart"></i></span>{{post.likes_amount}}</a>
+                <a class="justify-content-sm-center ml-sm-auto mt-sm-0 mt-2" href="#"><span class="align-middle mr-2"><i class="ti-themify-favicon"></i></span>03 Comments</a>
+                <div class="news_socail ml-sm-auto mt-sm-0 mt-2">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-dribbble"></i></a>
+                  <a href="#"><i class="fab fa-behance"></i></a>
                 </div>
               </div>
             </div>
-            <!-- End Blog Post Siddebar -->
+            
+
+            <div class="comments-area">
+              <h4>03 Comments</h4>
+              <div class="comment-list">
+                <div class="single-comment justify-content-between d-flex">
+                  <div class="user justify-content-between d-flex">
+                    <div class="desc">
+                      <h5><a href="#">Emilly Blunt</a></h5>
+                      <p class="date">December 4, 2017 at 3:12 pm </p>
+                      <p class="comment">
+                          Never say goodbye till the end comes!
+                      </p>
+                    </div>
+                  </div>
+                  <div class="reply-btn">
+                          <a href="" class="btn-reply text-uppercase">reply</a> 
+                  </div>
+                </div>
+              </div>	
+              <div class="comment-list">
+                <div class="single-comment justify-content-between d-flex">
+                  <div class="user justify-content-between d-flex">
+                    <div class="desc">
+                      <h5><a href="#">Maria Luna</a></h5>
+                      <p class="date">December 4, 2017 at 3:12 pm </p>
+                      <p class="comment">
+                          Never say goodbye till the end comes!
+                      </p>
+                    </div>
+                  </div>
+                  <div class="reply-btn">
+                          <a href="" class="btn-reply text-uppercase">reply</a> 
+                  </div>
+                </div>
+              </div>	
+              <div class="comment-list">
+                <div class="single-comment justify-content-between d-flex">
+                  <div class="user justify-content-between d-flex">
+                    <div class="desc">
+                      <h5><a href="#">Ina Hayes</a></h5>
+                      <p class="date">December 4, 2017 at 3:12 pm </p>
+                      <p class="comment">
+                          Never say goodbye till the end comes!
+                      </p>
+                    </div>
+                  </div>
+                  <div class="reply-btn">
+                          <a href="" class="btn-reply text-uppercase">reply</a> 
+                  </div>
+                </div>
+              </div>	                                             				
+            </div>
           </div>
+
+
+          <!-- Start Blog Post Siddebar -->
+          <div class="col-lg-4 sidebar-widgets">
+            <div class="widget-wrap">
+              <div class="single-sidebar-widget newsletter-widget">
+                <h4 class="single-sidebar-widget__title">Newsletter</h4>
+                <div class="form-group mt-30">
+                  <div class="col-autos">
+                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''"
+                      onblur="this.placeholder = 'Enter email'">
+                  </div>
+                </div>
+                <button class="bbtns d-block mt-20 w-100">Subcribe</button>
+              </div>
+
+
+              <div class="single-sidebar-widget post-category-widget">
+                <h4 class="single-sidebar-widget" style="height:200px;">Здесь будет реклама</h4>
+              </div>
+            </div>
+          </div>
+          <!-- End Blog Post Siddebar -->
         </div>
-      </section>
-      <!--================ End Blog Post Area =================-->
-    </main>
+      </div>
+    </section>
+    <!--================ End Blog Post Area =================-->
 
     <!--================ Start Footer Area =================-->
     <footer class="footer-area section-padding">
@@ -252,11 +236,9 @@
           </div>
         </div>
         <div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
-          <p class="footer-text m-0">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          </p>
+          <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
         </div>
       </div>
     </footer>
