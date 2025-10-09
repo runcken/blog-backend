@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block content %}
-    
-    <!--================ Hero sm Banner start =================-->      
+
+{% block title %}
+{{ post.title }} - Blog Details
+{% endblock %}
+
+{% block content %} 
+    <!--================ Hero sm Banner start =================-->
     <section class="mb-30px">
       <div class="container">
         <div class="hero-banner hero-banner--sm">
@@ -18,7 +22,7 @@
         </div>
       </div>
     </section>
-    <!--================ Hero sm Banner end =================-->    
+    <!--================ Hero sm Banner end =================-->
     
 
     <!--================ Start Blog Post Area =================-->
@@ -68,7 +72,7 @@
                     </div>
                   </div>
                   <div class="reply-btn">
-                          <a href="" class="btn-reply text-uppercase">reply</a> 
+                          <a href="" class="btn-reply text-uppercase">reply</a>
                   </div>
                 </div>
               {% endfor %}
@@ -102,6 +106,4 @@
       </section>
       <!--================ End Blog Post Area =================-->
     </main>
-    
 {% endblock %}
-

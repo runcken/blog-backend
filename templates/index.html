@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block title %}
+Sensive Blog - Home
+{% endblock %}
+
 {% block content %}
-    
     <main class="site-main">
       <!--================Hero Banner start =================-->
       <section class="mb-30px">
@@ -9,13 +13,13 @@
           <div class="hero-banner">
             <div class="hero-banner__content">
               <h3>Tours &amp; Travels</h3>
-              <h1>Amazing Places on earth</h1>
+              <h1>Amazing Places on Earth</h1>
               <h4>December 12, 2018</h4>
             </div>
           </div>
         </div>
       </section>
-      <!--================Hero Banner end =================-->  
+      <!--================Hero Banner end =================-->
 
       <!--================ Blog slider start =================-->
       <section>
@@ -58,7 +62,7 @@
                   <h3>{{post.title}}</h3>
                   <p>{{post.text|truncatechars:200}}</p>
                   <a class="button" href="{% url 'post_detail' post.slug %}">Read More <i class="ti-arrow-right"></i></a>
-                </div>                           
+                </div>
               </div>
               {% endfor %}  
             </div>
@@ -116,6 +120,5 @@
         </div>
       </section>
       <!--================ End Blog Post Area =================-->
-    </main>
-    
-{% endblock %}            
+    </main>  
+{% endblock %}
